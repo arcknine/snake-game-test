@@ -1,7 +1,7 @@
 class Border
 
-  def initialize(window)
-    @window = window
+  def initialize
+    
   end
 
   def draw
