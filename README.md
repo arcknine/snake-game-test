@@ -13,7 +13,7 @@ How To Run:
 
 * Ruby Version 2.5.0
 
-* Controlls `W` (Up), `A` (Left), `S` (Down), `D` (Right), `Q` (to quit)
+* Controls: `W (Up), A (Left), S (Down), D (Right), Q (to quit)`
 
 How To Run:
 
