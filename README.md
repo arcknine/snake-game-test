@@ -1,6 +1,4 @@
-# README
-=== 
-Snake using Gosu GEM
+# Snake using Gosu GEM
 
 * Ruby Version 2.5.0
 
@@ -10,9 +8,8 @@ How To Run:
 
 2. `ruby snake.rb` to run game
 
-
-=== 
-Snake Running in Terminal
+ 
+# Snake Running in Terminal
 
 * Ruby Version 2.5.0
 
