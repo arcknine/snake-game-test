@@ -1,5 +1,5 @@
 require 'curses'
-require_relative 'terminal_components/body'
+require_relative 'terminal_components/snake'
 require_relative 'terminal_components/border'
 include Curses
 
@@ -12,7 +12,7 @@ class SnakeTerminal
 
     @output = -> x, y, text { print "\033[#{y};#{x}f#{text}" }
 
-    @snake = Body.new(@output)
+    @snake = Snake.new(@output)
     @border = Border.new(@output)
   end
 
@@ -27,7 +27,7 @@ class SnakeTerminal
         loop do
           @output.(40, 1, "score: #{@score}")
           @output.(@apple[0], @apple[1], '@')
-          @output.(2,0, "Speed #{@speed}")
+          @output.(2,0, "Speed: #{@speed}")
           @snake.draw
           
           if @snake.outside_bounds?
@@ -37,12 +37,12 @@ class SnakeTerminal
           if @snake.ate_apple?(@apple)
             @score += 10
             @apple = [rand(2..89), rand(2..34)]
-            @speed += 1  if @score % 500 == 0
+            @speed += 1  if @score % 500 == 0 # speed updates every 500 score is reached
           else
             @snake.remove_tail!
           end
 
-          sleep 0.1 / @speed
+          sleep (0.1 / @speed)
         end
       end
 
